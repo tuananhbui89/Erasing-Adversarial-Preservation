@@ -1,6 +1,6 @@
-# Erasing-Adversarial-Preservation
+# Adversarial-Erasing
 
-Code for the paper *"Erasing Undesirable Concepts in Diffusion Models with Adversarial Preservation"* (NeurIPS 2024).
+Code for the paper *"Erasing Undesirable Concepts in Diffusion Models with Adversarial Preservation"*.
 
 ## Installation Guide
 
@@ -66,13 +66,11 @@ The list of prompts used in the paper can be found in the `data` folder, includi
 We provide implementation of our method and baselines:
 
 - `train_adversarial_gumbel.py`: Implementation of our method
-- `train_esd.py`: Implementation of ESD
+- `train_esd.py`: Implementation of ESD 
 - `train_uce.py`: Implementation of UCE
 - `train-esd-preserve.py`: Implementation of ESD with preservation to study the impact of erasing nudity and garbage truck concepts
 
 To set concepts to erase, modify the `utils_exp.py` file and change the argument `--prompt` in the bash files.
-
-We provide the evaluation results of our method and baselines in the `evaluation_folder` folder and the associated notebooks to reproduce the results in the paper.
 
 ## References
 
