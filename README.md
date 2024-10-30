@@ -2,11 +2,13 @@
 
 ## ⚡️Erasing-Adversarial-Preservation⚡️
 
-Code for the paper *"Erasing Undesirable Concepts in Diffusion Models with Adversarial Preservation"* (accepted at NeurIPS 2024).
+**"Erasing Undesirable Concepts in Diffusion Models with Adversarial Preservation"** (NeurIPS 2024).
 
 [[📄 Paper]](https://arxiv.org/abs/2410.15618) [[🌟 Project Page]](https://tuananhbui89.github.io/projects/adversarial-preservation/) [[🎨 Poster]](https://www.dropbox.com/scl/fi/tsb6036mb5mme7br73kr4/NeurIPS-2024-AP.pdf?rlkey=c4r1ecgxnm6xd3wy00vaprq62&st=15u48nos&dl=0) [[📊 Slides]](https://www.dropbox.com/scl/fi/jmqtqp939jfr7p3xrel8x/2024-AP-compact.pdf?rlkey=bzkhlhmg63efijlzo51mpnwzf&st=69no55kd&dl=0)
 
 Contact: tuananh.bui@monash.edu
+
+<div align="left">
 
 **Our other papers on Concept Erasing/Unlearning:**
 
@@ -33,32 +35,11 @@ Diffusion models excel at generating visually striking content from text but can
 **(3)** Furthermore, the choice of concept to be preserved during erasure significantly impacts the model's generative capability; relying on neutral concepts, as in previous work, is not an optimal solution.
 **(4)** This highlights the need for adaptive methods to identify and preserve the most sensitive concepts related to the target concept being erased, rather than relying on fixed neutral/generic concepts.
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="https://tuananhbui89.github.io/assets/img/AP_arXiv/SDv14/compare-ESD-nudity-ESD-garbage-truck-similarity_clip_nudity_20_side_by_side.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-    </div>
-</div>
-<div class="caption">
-    Analysis of the impact of erasing the target concept on the model's capability. The impact is measured by the difference of CLIP score $\delta(c)$ between the original model and the corresponding sanitized model.
-</div>
+[![](https://tuananhbui89.github.io/assets/img/AP_arXiv/SDv14/compare-ESD-nudity-ESD-garbage-truck-similarity_clip_nudity_20_side_by_side.png)](https://tuananhbui89.github.io/assets/img/AP_arXiv/SDv14/compare-ESD-nudity-ESD-garbage-truck-similarity_clip_nudity_20_side_by_side.png)
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="https://tuananhbui89.github.io/assets/img/AP_arXiv/SDv14/compare_histogram_nudity_esd-nudity_20_CLIP_2.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-    </div>
-</div>
-<div class="caption">
-    Sensitivity spectrum of concepts to the target concept "nudity". The histogram shows the distribution of the similarity score between outputs of the original model $\theta$ and the corresponding sanitized model $\theta_{c_e}'$ for each concept $c$ from the CLIP tokenizer vocabulary.
-</div>
+[![](https://tuananhbui89.github.io/assets/img/AP_arXiv/SDv14/compare_histogram_nudity_esd-nudity_20_CLIP_2.png)](https://tuananhbui89.github.io/assets/img/AP_arXiv/SDv14/compare_histogram_nudity_esd-nudity_20_CLIP_2.png)
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="https://tuananhbui89.github.io/assets/img/AP_arXiv/SDv14/SD-v1-4-ESD-garbage-truck-AE-similarity_clip_nudity_20_side_by_side.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-    </div>
-</div>
-<div class="caption">
-    Comparing the impact of erasing the same "garbage truck" to other concepts with different preserving strategies, including preserving a fixed concept such as " ", "lexus", or "road", and adaptively preserving the most sensitive concept found by our method.
-</div>
+[![](https://tuananhbui89.github.io/assets/img/AP_arXiv/SDv14/SD-v1-4-ESD-garbage-truck-AE-similarity_clip_nudity_20_side_by_side.png)](https://tuananhbui89.github.io/assets/img/AP_arXiv/SDv14/SD-v1-4-ESD-garbage-truck-AE-similarity_clip_nudity_20_side_by_side.png)
 
 ## Installation Guide
 
@@ -141,6 +122,13 @@ If you find this work useful for your research, please consider citing our paper
   title={Erasing Undesirable Concepts in Diffusion Models with Adversarial Preservation},
   author={Bui, Anh and Vuong, Long and Doan, Khanh and Le, Trung and Montague, Paul and Abraham, Tamas and Phung, Dinh},
   booktitle={NeurIPS},
+  year={2024}
+}
+
+@article{bui2024adaptive,
+  title={Fantastic Targets for Concept Erasure in Diffusion Models and Where to Find Them},
+  author={Bui, Anh and Vu, Trang and Vuong, Long and Le, Trung and Montague, Paul and Abraham, Tamas and Phung, Dinh},
+  journal={Preprint},
   year={2024}
 }
 
