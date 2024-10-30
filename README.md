@@ -1,6 +1,16 @@
 # Erasing-Adversarial-Preservation
 
-Code for the paper *"Erasing Undesirable Concepts in Diffusion Models with Adversarial Preservation"* (NeurIPS 2024).
+Code for the paper *"Erasing Undesirable Concepts in Diffusion Models with Adversarial Preservation"* (accepted at NeurIPS 2024).
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <a href="https://github.com/tuananhbui89/Erasing-Adversarial-Preservation" class="btn btn-primary" target="_blank">GitHub</a>
+        <a href="https://arxiv.org/abs/2410.15618" class="btn btn-secondary" target="_blank">arXiv</a>
+        <a href="https://www.dropbox.com/scl/fi/jmqtqp939jfr7p3xrel8x/2024-AP-compact.pdf?rlkey=bzkhlhmg63efijlzo51mpnwzf&st=69no55kd&dl=0" class="btn btn-orange" target="_blank">Slides</a>
+        <a href="https://www.dropbox.com/scl/fi/tsb6036mb5mme7br73kr4/NeurIPS-2024-AP.pdf?rlkey=c4r1ecgxnm6xd3wy00vaprq62&st=15u48nos&dl=0" class="btn btn-success" target="_blank">Poster</a>
+    </div>
+</div>
+</div>
 
 ## Installation Guide
 
@@ -73,6 +83,19 @@ We provide implementation of our method and baselines:
 To set concepts to erase, modify the `utils_exp.py` file and change the argument `--prompt` in the bash files.
 
 We provide the evaluation results of our method and baselines in the `evaluation_folder` folder and the associated notebooks to reproduce the results in the paper.
+
+## Citation
+
+If you find this work useful for your research, please consider citing our paper:
+
+```bibtex
+@article{bui2024erasing,
+  title={Erasing Undesirable Concepts in Diffusion Models with Adversarial Preservation},
+  author={Bui, Anh and Vuong, Long and Doan, Khanh and Le, Trung and Montague, Paul and Abraham, Tamas and Phung, Dinh},
+  booktitle={NeurIPS},
+  year={2024}
+}
+```
 
 ## References
 
