@@ -10,19 +10,21 @@ Contact: tuananh.bui@monash.edu
 
 <div align="left">
 
-**Our other papers on Concept Erasing/Unlearning:**
+**(Shameless plug :grin:) Our other papers on Concept Erasing/Unlearning:**
 
-> [**Fantastic Targets for Concept Erasure in Diffusion Models and Where to Find Them**](https://www.dropbox.com/scl/fi/pf2190qpfpiuo05mhcqmi/Adaptive-Guide-Erasure.pdf?rlkey=63s7ruwqxhrdsc4i603gjmsri&st=y79mr0ej&dl=0),
-> Tuan-Anh Bui, Trang Vu, Long Vuong, Trung Le, Paul Montague, Tamas Abraham, Dinh Phung
-> *Under Review ([Dropbox](https://www.dropbox.com/scl/fi/pf2190qpfpiuo05mhcqmi/Adaptive-Guide-Erasure.pdf?rlkey=63s7ruwqxhrdsc4i603gjmsri&st=y79mr0ej&dl=0))*  
+> [**Fantastic Targets for Concept Erasure in Diffusion Models and Where to Find Them**](https://www.dropbox.com/scl/fi/pf2190qpfpiuo05mhcqmi/Adaptive-Guide-Erasure.pdf?rlkey=63s7ruwqxhrdsc4i603gjmsri&st=y79mr0ej&dl=0),       
+> Tuan-Anh Bui, Trang Vu, Long Vuong, Trung Le, Paul Montague, Tamas Abraham, Dinh Phung       
+> *Under Review ([Dropbox](https://www.dropbox.com/scl/fi/pf2190qpfpiuo05mhcqmi/Adaptive-Guide-Erasure.pdf?rlkey=63s7ruwqxhrdsc4i603gjmsri&st=y79mr0ej&dl=0))*
 
-> [**Erasing Undesirable Concepts in Diffusion Models with Adversarial Preservation**](https://arxiv.org/abs/2410.15618),
-> Tuan-Anh Bui, Long Vuong, Khanh Doan, Trung Le, Paul Montague, Tamas Abraham, Dinh Phung
-> *NeurIPS 2024 ([arXiv 2410.15618](https://arxiv.org/abs/2410.15618))*  
+> [**Erasing Undesirable Concepts in Diffusion Models with Adversarial Preservation**](https://arxiv.org/abs/2410.15618),       
+> Tuan-Anh Bui, Long Vuong, Khanh Doan, Trung Le, Paul Montague, Tamas Abraham, Dinh Phung       
+> *NeurIPS 2024 ([arXiv 2410.15618](https://arxiv.org/abs/2410.15618))*
 
-> [**Removing Undesirable Concepts in Text-to-Image Generative Models with Learnable Prompts**](https://arxiv.org/abs/2403.12326),
-> Tuan-Anh Bui, Khanh Doan, Trung Le, Paul Montague, Tamas Abraham, Dinh Phung
-> *Preprint ([arXiv 2403.12326](https://arxiv.org/abs/2403.12326))*  
+> [**Removing Undesirable Concepts in Text-to-Image Generative Models with Learnable Prompts**](https://arxiv.org/abs/2403.12326),       
+> Tuan-Anh Bui, Khanh Doan, Trung Le, Paul Montague, Tamas Abraham, Dinh Phung       
+> *Preprint ([arXiv 2403.12326](https://arxiv.org/abs/2403.12326))*
+
+---
 
 ## Abstract
 
@@ -115,7 +117,7 @@ We provide the evaluation results of our method and baselines in the `evaluation
 
 ## Citation
 
-If you find this work useful for your research, please consider citing our paper:
+If you find this work useful in your research, please consider citing our paper (or our other papers :grin:):
 
 ```bibtex
 @article{bui2024erasing,
