@@ -1,15 +1,63 @@
-# Erasing-Adversarial-Preservation
+<div align="center">
+
+## ⚡️Erasing-Adversarial-Preservation⚡️
 
 Code for the paper *"Erasing Undesirable Concepts in Diffusion Models with Adversarial Preservation"* (accepted at NeurIPS 2024).
 
+[[📄 Paper]](https://arxiv.org/abs/2410.15618) [[🌟 Project Page]](https://tuananhbui89.github.io/projects/adversarial-preservation/) [[🎨 Poster]](https://www.dropbox.com/scl/fi/tsb6036mb5mme7br73kr4/NeurIPS-2024-AP.pdf?rlkey=c4r1ecgxnm6xd3wy00vaprq62&st=15u48nos&dl=0) [[📊 Slides]](https://www.dropbox.com/scl/fi/jmqtqp939jfr7p3xrel8x/2024-AP-compact.pdf?rlkey=bzkhlhmg63efijlzo51mpnwzf&st=69no55kd&dl=0)
+
+Contact: tuananh.bui@monash.edu
+
+**Our other papers on Concept Erasing/Unlearning:**
+
+> [**Fantastic Targets for Concept Erasure in Diffusion Models and Where to Find Them**](https://www.dropbox.com/scl/fi/pf2190qpfpiuo05mhcqmi/Adaptive-Guide-Erasure.pdf?rlkey=63s7ruwqxhrdsc4i603gjmsri&st=y79mr0ej&dl=0),
+> Tuan-Anh Bui, Trang Vu, Long Vuong, Trung Le, Paul Montague, Tamas Abraham, Dinh Phung
+> *Under Review ([Dropbox](https://www.dropbox.com/scl/fi/pf2190qpfpiuo05mhcqmi/Adaptive-Guide-Erasure.pdf?rlkey=63s7ruwqxhrdsc4i603gjmsri&st=y79mr0ej&dl=0))*  
+
+> [**Erasing Undesirable Concepts in Diffusion Models with Adversarial Preservation**](https://arxiv.org/abs/2410.15618),
+> Tuan-Anh Bui, Long Vuong, Khanh Doan, Trung Le, Paul Montague, Tamas Abraham, Dinh Phung
+> *NeurIPS 2024 ([arXiv 2410.15618](https://arxiv.org/abs/2410.15618))*  
+
+> [**Removing Undesirable Concepts in Text-to-Image Generative Models with Learnable Prompts**](https://arxiv.org/abs/2403.12326),
+> Tuan-Anh Bui, Khanh Doan, Trung Le, Paul Montague, Tamas Abraham, Dinh Phung
+> *Preprint ([arXiv 2403.12326](https://arxiv.org/abs/2403.12326))*  
+
+## Abstract
+
+Diffusion models excel at generating visually striking content from text but can inadvertently produce undesirable or harmful content when trained on unfiltered internet data. A practical solution is to selectively removing target concepts from the model, but this may impact the remaining concepts. Prior approaches have tried to balance this by introducing a loss term to preserve neutral content or a regularization term to minimize changes in the model parameters, yet resolving this trade-off remains challenging. In this work, we propose to identify and preserving concepts most affected by parameter changes, termed as **adversarial concepts**. This approach ensures stable erasure with minimal impact on the other concepts. We demonstrate the effectiveness of our method using the Stable Diffusion model, showing that it outperforms state-of-the-art erasure methods in eliminating unwanted content while maintaining the integrity of other unrelated elements.
+
+### Key Observations and Motivations
+
+**(1)** Erasing different target concepts from text-to-image diffusion models leads to varying impacts on the remaining concepts. For instance, removing 'nudity' significantly affects related concepts like 'women' and 'men' but has minimal impact on unrelated concepts like 'garbage truck.'
+**(2)** Neutral concepts lie in the middle of the sensitivity spectrum, suggesting that they do not adequately represent the model's capability to be preserved.
+**(3)** Furthermore, the choice of concept to be preserved during erasure significantly impacts the model's generative capability; relying on neutral concepts, as in previous work, is not an optimal solution.
+**(4)** This highlights the need for adaptive methods to identify and preserve the most sensitive concepts related to the target concept being erased, rather than relying on fixed neutral/generic concepts.
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        <a href="https://github.com/tuananhbui89/Erasing-Adversarial-Preservation" class="btn btn-primary" target="_blank">GitHub</a>
-        <a href="https://arxiv.org/abs/2410.15618" class="btn btn-secondary" target="_blank">arXiv</a>
-        <a href="https://www.dropbox.com/scl/fi/jmqtqp939jfr7p3xrel8x/2024-AP-compact.pdf?rlkey=bzkhlhmg63efijlzo51mpnwzf&st=69no55kd&dl=0" class="btn btn-orange" target="_blank">Slides</a>
-        <a href="https://www.dropbox.com/scl/fi/tsb6036mb5mme7br73kr4/NeurIPS-2024-AP.pdf?rlkey=c4r1ecgxnm6xd3wy00vaprq62&st=15u48nos&dl=0" class="btn btn-success" target="_blank">Poster</a>
+        {% include figure.html path="https://tuananhbui89.github.io/assets/img/AP_arXiv/SDv14/compare-ESD-nudity-ESD-garbage-truck-similarity_clip_nudity_20_side_by_side.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
+<div class="caption">
+    Analysis of the impact of erasing the target concept on the model's capability. The impact is measured by the difference of CLIP score $\delta(c)$ between the original model and the corresponding sanitized model.
+</div>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="https://tuananhbui89.github.io/assets/img/AP_arXiv/SDv14/compare_histogram_nudity_esd-nudity_20_CLIP_2.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+<div class="caption">
+    Sensitivity spectrum of concepts to the target concept "nudity". The histogram shows the distribution of the similarity score between outputs of the original model $\theta$ and the corresponding sanitized model $\theta_{c_e}'$ for each concept $c$ from the CLIP tokenizer vocabulary.
+</div>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="https://tuananhbui89.github.io/assets/img/AP_arXiv/SDv14/SD-v1-4-ESD-garbage-truck-AE-similarity_clip_nudity_20_side_by_side.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+<div class="caption">
+    Comparing the impact of erasing the same "garbage truck" to other concepts with different preserving strategies, including preserving a fixed concept such as " ", "lexus", or "road", and adaptively preserving the most sensitive concept found by our method.
 </div>
 
 ## Installation Guide
@@ -93,6 +141,13 @@ If you find this work useful for your research, please consider citing our paper
   title={Erasing Undesirable Concepts in Diffusion Models with Adversarial Preservation},
   author={Bui, Anh and Vuong, Long and Doan, Khanh and Le, Trung and Montague, Paul and Abraham, Tamas and Phung, Dinh},
   booktitle={NeurIPS},
+  year={2024}
+}
+
+@article{bui2024removing,
+  title={Removing Undesirable Concepts in Text-to-Image Generative Models with Learnable Prompts},
+  author={Bui, Anh and Doan, Khanh and Le, Trung and Montague, Paul and Abraham, Tamas and Phung, Dinh},
+  journal={arXiv preprint arXiv:2403.12326},
   year={2024}
 }
 ```
