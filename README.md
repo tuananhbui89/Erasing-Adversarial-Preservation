@@ -4,7 +4,7 @@
 
 **"Erasing Undesirable Concepts in Diffusion Models with Adversarial Preservation"** (NeurIPS 2024).
 
-[[📄 Paper]](https://arxiv.org/abs/2410.15618) [[🌟 Project Page]](https://tuananhbui89.github.io/projects/adversarial-preservation/) [[🎨 Poster]](https://www.dropbox.com/scl/fi/tsb6036mb5mme7br73kr4/NeurIPS-2024-AP.pdf?rlkey=c4r1ecgxnm6xd3wy00vaprq62&st=15u48nos&dl=0) [[📊 Slides]](https://www.dropbox.com/scl/fi/jmqtqp939jfr7p3xrel8x/2024-AP-compact.pdf?rlkey=bzkhlhmg63efijlzo51mpnwzf&st=69no55kd&dl=0)
+[[📄 Paper]](https://arxiv.org/abs/2410.15618) [[🌟 Project Page]](https://tuananhbui89.github.io/projects/adversarial-preservation/) [[🎨 Poster]](https://www.dropbox.com/scl/fi/41kvbtc4jr0zowoyjcgay/NeurIPS-2024-AP.pdf?rlkey=sgu12b67gyk5r6240i4z48urp&st=iff788ae&dl=0) [[📊 Slides]](https://www.dropbox.com/scl/fi/jmqtqp939jfr7p3xrel8x/2024-AP-compact.pdf?rlkey=bzkhlhmg63efijlzo51mpnwzf&st=69no55kd&dl=0)
 
 Contact: tuananh.bui@monash.edu
 
@@ -29,6 +29,8 @@ Contact: tuananh.bui@monash.edu
 ## Abstract
 
 Diffusion models excel at generating visually striking content from text but can inadvertently produce undesirable or harmful content when trained on unfiltered internet data. A practical solution is to selectively removing target concepts from the model, but this may impact the remaining concepts. Prior approaches have tried to balance this by introducing a loss term to preserve neutral content or a regularization term to minimize changes in the model parameters, yet resolving this trade-off remains challenging. In this work, we propose to identify and preserving concepts most affected by parameter changes, termed as **adversarial concepts**. This approach ensures stable erasure with minimal impact on the other concepts. We demonstrate the effectiveness of our method using the Stable Diffusion model, showing that it outperforms state-of-the-art erasure methods in eliminating unwanted content while maintaining the integrity of other unrelated elements.
+
+[![](https://tuananhbui89.github.io/assets/img/AP_arXiv/NeurIPS-2024-AP.png)](https://tuananhbui89.github.io/assets/img/AP_arXiv/NeurIPS-2024-AP.png)
 
 ### Key Observations and Motivations
 
